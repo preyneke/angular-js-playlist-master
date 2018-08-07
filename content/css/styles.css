@@ -105,6 +105,17 @@ main{
   border-radius: 10px;
   border: 2px solid #ddd;
   margin: 10px 0;
+
+}
+
+.content textarea{
+  resize: none;
+  width: 90%;
+  height: 100px;
+  padding: 10px 5%;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  margin: 10px 0;
 }
 
 .content input[type="submit"]:last-child{
@@ -125,6 +136,9 @@ main{
   margin-left: 10px;
 }
 
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+  border: solid 2px red;
+}
 /*Animations*/
 /* The starting CSS styles for the enter animation */
 main.ng-enter {
@@ -164,4 +178,8 @@ main.ng-enter.ng-enter-active {
   transition-delay: 0.2s;
   transition-duration: 0;
 
+}
+input[disabled ="disabled"]{
+  opacity: 0.4;
+  cursor: not-allowed !important;
 }

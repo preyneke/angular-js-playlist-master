@@ -1,11 +1,20 @@
 var myNinjaApp = angular.module('myNinjaApp', ['ngRoute', 'ngAnimate']);
 
 myNinjaApp.config(['$routeProvider', function ($routeProvider) {
+
+
+
     $routeProvider
         .when('/home', {
             templateUrl: 'views/home.html',
             controller: 'NinjaController'
-        }).when('/directory', {
+        }) .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactController'
+    }).when('/contact-success', {
+        templateUrl: 'views/contact-success.html',
+        controller: 'ContactController'
+    }).when('/directory', {
             templateUrl: 'views/directory.html',
             controller: 'NinjaController'
     }).otherwise({
@@ -65,4 +74,11 @@ $scope.ninjas = data;
      
 
 
+}]);
+
+myNinjaApp.controller('ContactController', ['$scope', '$location', function ($scope, $location) {
+    $scope.sendMessage = function () {
+        $location.path('contact-success');
+        
+    }
 }]);
